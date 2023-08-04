@@ -1,0 +1,15 @@
+void Setmine(char board[ROWS][COLS], int row, int col)
+{
+	int count = EASY_COUNT;
+	//
+	while (count)
+	{
+		int x = rand() % row + 1;
+		int y = rand() % col + 1;
+		if (board[x][y] == '0')
+		{
+			board[x][y] = '1';
+			count--;
+		}
+	}
+}

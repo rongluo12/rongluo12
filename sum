@@ -1,0 +1,6 @@
+numbers.stream()
+                .forEach(System.out::println);
+ // reduce:
+        int sum = numbers.stream()
+                .reduce(0, Integer::sum);
+        System.out.println("Sum: " + sum);

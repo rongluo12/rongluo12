@@ -1,0 +1,12 @@
+
+#include<iostream>
+using namespace std;
+#define N 20
+template <class Ta, class Tb, class Tc>
+void fill(Ta& arr, Tb& start, Tb& n, Tc& value)
+{
+    for(int i = start;i < n; i++)
+    {
+        arr[i] = value;
+    }
+}

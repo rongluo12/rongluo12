@@ -1,0 +1,7 @@
+package cn.edu.springdemo.aopDemo;
+
+public interface LogAop {
+    public String device1(String str1);
+    public int add(int a , int b);
+    public int subtract(int a , int b);
+}

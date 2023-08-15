@@ -1,0 +1,16 @@
+let shallSort = (arr) => {
+  let gap = 1
+  while (gap < arr.length / 3) {
+    gap = gap * 3 + 1
+  }
+  while (gap >= 1) {
+    console.log(gap)
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i; j >= gap && arr[j] < arr[j - gap]; j -= gap) {
+        [arr[j - gap], arr[j]] = [arr[j], arr[j - gap]]
+      }
+    }
+    gap = (gap - 1) / 3
+  }
+  return arr
+}

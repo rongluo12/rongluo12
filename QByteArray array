@@ -1,0 +1,18 @@
+void Finddialog::memorize()
+{
+    QString current_text = search_line->text().trimmed();
+    if (!this->history_browser->get_len())
+    {
+        this->history_browser->clear();
+    }
+    current_text = QString::fromStdString(current_text.toStdString());
+    this->history_browser->append(current_text);
+    this->history_browser->set_len(this->history_browser->get_len() + 1);
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF8"));
+    QFile file(history_txt);
+    file.open(QIODevice::ReadWrite | QIODevice::Text);
+    QByteArray array = file.readAll();
+    QTextStream out(&file);
+    out << current_text << "\n";
+    file.close();
+}
